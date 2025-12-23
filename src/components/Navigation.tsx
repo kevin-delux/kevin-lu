@@ -136,16 +136,15 @@ export const Navigation = () => {
                   </div>
                 </a>
 
-                <a
-                  href="tel:+12265062709"
-                  className="flex items-center gap-4 p-4 rounded-xl bg-slate-800/50 hover:bg-slate-800 transition-colors group"
+                <div
+                  className="flex items-center gap-4 p-4 rounded-xl bg-slate-800/50"
                 >
                   <Phone className="text-cyan-400 flex-shrink-0" size={24} />
                   <div>
                     <p className="text-xs text-slate-400 font-medium">Phone</p>
-                    <p className="text-sm font-semibold text-slate-100 group-hover:text-cyan-400 transition-colors">+1 (226) 506-2709</p>
+                    <p className="text-sm font-semibold text-slate-100">Available upon request. Please email me.</p>
                   </div>
-                </a>
+                </div>
 
                 <div className="flex items-center gap-4 p-4 rounded-xl bg-slate-800/50">
                   <MapPin className="text-cyan-400 flex-shrink-0" size={24} />

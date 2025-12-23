@@ -18,8 +18,8 @@ export const ContactSection = () => {
     { 
       icon: Phone, 
       label: 'Phone', 
-      value: '+1 (226) 506-2709',
-      href: 'tel:+12265062709',
+      value: 'Available upon request. Please email me.',
+      href: '#',
       color: 'hover:text-cyan-400'
     },
     { 
