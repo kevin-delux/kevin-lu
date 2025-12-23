@@ -4,7 +4,7 @@ export const Footer = () => {
       <div className="container mx-auto px-6">
         {/* Footer content removed */}
       </div>
-      <p>© onlyoneortworounds</p>
+      <p>© Kevin Lu 2025. This portfolio is a prototype.</p>
     </footer>
   );
 };

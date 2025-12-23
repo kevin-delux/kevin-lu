@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
-import { Award, ChevronDown } from 'lucide-react';
+import { useRef, useState, useEffect } from 'react';
+import { Award, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const awards = {
   academic: [
@@ -70,10 +70,38 @@ const AwardItem = ({ award, index, isInView }: { award: typeof awards.academic[0
 
 export const AwardsSection = () => {
   const headerRef = useRef(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const isHeaderInView = useInView(headerRef, { once: true, margin: '-100px' });
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+
+  const checkScroll = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  useEffect(() => {
+    checkScroll();
+    window.addEventListener('resize', checkScroll);
+    return () => window.removeEventListener('resize', checkScroll);
+  }, []);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 400;
+      scrollContainerRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth',
+      });
+      setTimeout(checkScroll, 100);
+    }
+  };
 
   return (
-    <section className="py-32 bg-slate-800/30">
+    <section id="awards" className="py-32 bg-slate-800/30">
       <div className="container mx-auto px-6">
         <motion.div
           ref={headerRef}
@@ -90,7 +118,40 @@ export const AwardsSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Scroll buttons for mobile/tablet */}
+        <div className="flex justify-center gap-2 mb-6 md:hidden">
+          <button
+            onClick={() => scroll('left')}
+            disabled={!canScrollLeft}
+            className={`p-2 rounded-lg border transition-all ${
+              canScrollLeft
+                ? 'border-cyan-500/50 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-500 cursor-pointer'
+                : 'border-slate-700 bg-slate-900/30 text-slate-600 cursor-not-allowed opacity-50'
+            }`}
+            aria-label="Scroll left"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            onClick={() => scroll('right')}
+            disabled={!canScrollRight}
+            className={`p-2 rounded-lg border transition-all ${
+              canScrollRight
+                ? 'border-cyan-500/50 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-500 cursor-pointer'
+                : 'border-slate-700 bg-slate-900/30 text-slate-600 cursor-not-allowed opacity-50'
+            }`}
+            aria-label="Scroll right"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
+
+        <div 
+          ref={scrollContainerRef}
+          onScroll={checkScroll}
+          className="grid md:grid-cols-3 gap-8 overflow-x-auto md:overflow-x-visible pb-4"
+          style={{ scrollBehavior: 'smooth' }}
+        >
           {/* Academic Awards */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
