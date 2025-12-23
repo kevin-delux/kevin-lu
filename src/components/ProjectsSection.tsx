@@ -1,17 +1,18 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { ArrowUpRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { assetPath } from '../utils/assetPath';
 
 const projects = [
   {
     title: 'BMSA Charity Executive',
     category: 'Leadership',
     description: 'Leading charitable initiatives and community engagement programs.',
-    image: '/images/kevin-portrait.png',
+    image: assetPath('/images/kevin-portrait.png'),
     images: [
-      '/images/kevin-portrait.png',
-      '/images/bmsa-booth.png',
-      '/images/team-photo.png',
+      assetPath('/images/kevin-portrait.png'),
+      assetPath('/images/bmsa-booth.png'),
+      assetPath('/images/team-photo.png'),
     ],
     link: 'https://linktr.ee/bmsawestern?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGng-akPA4MoYBOvadDBvvpgAZGE74iZs065V_mG0DFO0qx7pZdEhCL5jQCL9o_aem_T9ZDRKAoL8XSSAXuiu8Trg',
   },
@@ -19,7 +20,7 @@ const projects = [
     title: 'Children\'s Holiday Party (CHP) Host',
     category: 'Community',
     description: 'Organizing and hosting annual holiday celebration events for students.',
-    image: '/images/gift wrapping.webp',
+    image: assetPath('/images/gift wrapping.webp'),
     noImages: true,
     link: 'https://linktr.ee/masseychp?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGndmNEsmquR0wzsSVcGqdTnPBU2jX2La3yrfRJJhVpTxF6fxQuIRF0x1kr5hQ_aem_HtvAjonaUsHDsvG_VXq_sA',
   },
@@ -27,20 +28,20 @@ const projects = [
     title: 'FIRST Robotics Design Team Leader',
     category: 'Engineering',
     description: 'Leading robotic design and innovation projects with team collaboration.',
-    image: '/images/frc0.webp',
+    image: assetPath('/images/frc0.webp'),
     images: [
-      '/images/frc0.webp',
-      '/images/frc1.webp',
-      '/images/frc2.jpg',
+      assetPath('/images/frc0.webp'),
+      assetPath('/images/frc1.webp'),
+      assetPath('/images/frc2.jpg'),
     ],
   },
   {
     title: 'SSC Charity Committee',
     category: 'Volunteering',
     description: 'Organizing charitable events and community support initiatives.',
-    image: '/images/ssc letters to veterans.jpg',
+    image: assetPath('/images/ssc letters to veterans.jpg'),
     images: [
-      '/images/ssc letters to veterans.jpg',
+      assetPath('/images/ssc letters to veterans.jpg'),
     ],
   },
 ];

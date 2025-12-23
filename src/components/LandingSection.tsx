@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { assetPath } from '../utils/assetPath';
 
 export const LandingSection = () => {
   return (
@@ -97,7 +98,7 @@ export const LandingSection = () => {
           >
             <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-slate-800">
               <img
-                src="/images/kevin landing.webp"
+                src={assetPath('/images/kevin landing.webp')}
                 alt="Kevin Lu"
                 className="w-full h-full object-cover"
               />

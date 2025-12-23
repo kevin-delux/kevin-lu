@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { assetPath } from '../utils/assetPath';
 
 export const HeroSection = () => {
   const ref = useRef(null);
@@ -20,7 +21,7 @@ export const HeroSection = () => {
           >
             <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-slate-800">
               <img
-                src="/images/not your average student researcher.webp"
+                src={assetPath('/images/not your average student researcher.webp')}
                 alt="Portrait"
                 className="w-full h-full object-cover"
               />
