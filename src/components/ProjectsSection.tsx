@@ -19,7 +19,7 @@ const projects = [
   {
     title: 'Children\'s Holiday Party (CHP) Host',
     category: 'Community',
-    description: 'Organizing and hosting annual holiday celebration events for students.',
+    description: 'Hosting an annual holiday celebration event for less fortunate children in my community.',
     image: assetPath('/images/gift wrapping.webp'),
     noImages: true,
     link: 'https://linktr.ee/masseychp?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGndmNEsmquR0wzsSVcGqdTnPBU2jX2La3yrfRJJhVpTxF6fxQuIRF0x1kr5hQ_aem_HtvAjonaUsHDsvG_VXq_sA',
