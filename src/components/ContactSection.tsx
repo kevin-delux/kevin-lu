@@ -11,7 +11,7 @@ export const ContactSection = () => {
     { 
       icon: Mail, 
       label: 'Email', 
-      value: 'kevin.y.lu2007@gmail.com',
+      value: 'kevin.y.lu2007[at]gmail[dot]com',
       href: 'mailto:kevin.y.lu2007@gmail.com',
       color: 'hover:text-cyan-400'
     },

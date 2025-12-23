@@ -132,7 +132,7 @@ export const Navigation = () => {
                   <Mail className="text-cyan-400 flex-shrink-0" size={24} />
                   <div>
                     <p className="text-xs text-slate-400 font-medium">Email</p>
-                    <p className="text-sm font-semibold text-slate-100 group-hover:text-cyan-400 transition-colors">kevin.y.lu2007@gmail.com</p>
+                    <p className="text-sm font-semibold text-slate-100 group-hover:text-cyan-400 transition-colors">kevin.y.lu2007[at]gmail[dot]com</p>
                   </div>
                 </a>
 
