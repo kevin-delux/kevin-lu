@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Lock, Eye, EyeOff, Mail, Linkedin, X } from 'lucide-react';
+import { Lock, Eye, EyeOff, Mail, Linkedin, X, Microscope, Dna, Heart, Beaker, Pill } from 'lucide-react';
 
 interface PasswordModalProps {
   isOpen: boolean;
@@ -28,13 +28,84 @@ export const PasswordModal = ({ isOpen, onUnlock }: PasswordModalProps) => {
 
   if (!isOpen) return null;
 
+  // Biomedical icons for floating animation
+  const floatingIcons = [
+    { icon: Microscope, delay: 0, x: '8%', y: '12%' },
+    { icon: Dna, delay: 0.4, x: '88%', y: '18%' },
+    { icon: Heart, delay: 0.8, x: '12%', y: '82%' },
+    { icon: Beaker, delay: 1.2, x: '82%', y: '78%' },
+    { icon: Pill, delay: 1.6, x: '50%', y: '5%' },
+    { icon: Microscope, delay: 2, x: '72%', y: '45%' },
+    { icon: Dna, delay: 2.4, x: '28%', y: '50%' },
+  ];
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-slate-950/95 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-slate-950/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-hidden"
     >
+      {/* Starry background */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(100)].map((_, i) => (
+          <motion.div
+            key={`star-${i}`}
+            className="absolute rounded-full bg-white"
+            style={{
+              width: Math.random() * 2 + 1 + 'px',
+              height: Math.random() * 2 + 1 + 'px',
+              left: Math.random() * 100 + '%',
+              top: Math.random() * 100 + '%',
+              opacity: Math.random() * 0.7 + 0.3,
+            }}
+            animate={{
+              opacity: [Math.random() * 0.5 + 0.2, Math.random() * 0.8 + 0.3, Math.random() * 0.5 + 0.2],
+            }}
+            transition={{
+              duration: Math.random() * 3 + 2,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Floating biomedical icons background */}
+      {floatingIcons.map((item, idx) => {
+        const Icon = item.icon;
+        return (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.3 }}
+            transition={{ delay: item.delay }}
+            className="absolute pointer-events-auto cursor-pointer"
+            style={{ left: item.x, top: item.y }}
+            whileHover={{ opacity: 1, transition: { duration: 0 } }}
+          >
+            <motion.div
+              animate={{
+                y: [0, -40, 0],
+                x: [0, 20, -20, 0],
+                rotate: [0, 180, 360],
+              }}
+              transition={{
+                duration: 8 + item.delay,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
+              whileHover={{
+                scale: 1.3,
+                transition: { duration: 0 }
+              }}
+            >
+              <Icon size={52} className="text-cyan-400" strokeWidth={1.2} style={{ filter: 'drop-shadow(0 0 15px rgba(34, 211, 238, 0.8)) drop-shadow(0 0 30px rgba(34, 211, 238, 0.6)) drop-shadow(0 0 45px rgba(34, 211, 238, 0.4))', transition: 'all 0s ease' }} />
+            </motion.div>
+          </motion.div>
+        );
+      })}
+
       <motion.div
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
