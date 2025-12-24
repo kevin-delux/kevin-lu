@@ -13,7 +13,7 @@ export const PasswordModal = ({ isOpen, onUnlock }: PasswordModalProps) => {
   const [error, setError] = useState('');
   const [showContactModal, setShowContactModal] = useState(false);
 
-  const correctPassword = 'kevin2025'; // Change this to your desired password
+  const correctPassword = 'kevin2026'; // Change this to your desired password
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
