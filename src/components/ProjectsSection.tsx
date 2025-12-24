@@ -8,11 +8,11 @@ const projects = [
     title: 'BMSA Charity Executive',
     category: 'Leadership',
     description: 'Leading charitable initiatives and community engagement programs.',
-    image: assetPath('/images/BMSASSC.jpg'),
+    image: assetPath('/images/kevin-portrait.png'),
     images: [
-      assetPath('/images/BMSASSC.jpg'),
       assetPath('/images/kevin-portrait.png'),
       assetPath('/images/bmsa-booth.png'),
+      assetPath('/images/BMSASSC.jpg'),
     ],
     link: 'https://linktr.ee/bmsawestern?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGng-akPA4MoYBOvadDBvvpgAZGE74iZs065V_mG0DFO0qx7pZdEhCL5jQCL9o_aem_T9ZDRKAoL8XSSAXuiu8Trg',
   },

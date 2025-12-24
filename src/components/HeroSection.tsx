@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { assetPath } from '../utils/assetPath';
+import { Download } from 'lucide-react';
 
 export const HeroSection = () => {
   const ref = useRef(null);
@@ -51,6 +52,15 @@ export const HeroSection = () => {
                 I believe that I will greatly contribute to the scientific community and improve or even save the lives of those who need help the most, just like me only a couple years ago.
               </p>
             </div>
+            <a
+              href="https://drive.google.com/file/d/1pNh-qtKSs5XLMDiXTp7-94tKooxEBSz8/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-slate-950 font-semibold rounded-lg transition-colors duration-300"
+            >
+              <Download size={20} />
+              Resume
+            </a>
           </motion.div>
         </div>
       </div>
