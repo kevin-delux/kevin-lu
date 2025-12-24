@@ -98,7 +98,7 @@ export const LandingSection = () => {
           >
             <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-slate-800">
               <img
-                src={assetPath('/images/city hall.webp')}
+                src={assetPath('/images/new landing.png')}
                 alt="Kevin Lu"
                 className="w-full h-full object-cover"
               />
