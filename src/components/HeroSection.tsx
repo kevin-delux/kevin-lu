@@ -53,7 +53,7 @@ export const HeroSection = () => {
               </p>
             </div>
             <a
-              href="https://drive.google.com/file/d/1pNh-qtKSs5XLMDiXTp7-94tKooxEBSz8/view?usp=sharing"
+              href="https://drive.google.com/file/d/1mRp0U9wDaLffgSMm_9iaUR_BsukBdQc3/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-slate-950 font-semibold rounded-lg transition-colors duration-300"
