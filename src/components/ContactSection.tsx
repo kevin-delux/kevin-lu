@@ -46,7 +46,7 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-slate-800/30">
+    <section id="contact" className="py-12 bg-slate-800/30">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
