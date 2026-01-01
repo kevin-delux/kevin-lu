@@ -57,14 +57,16 @@ export const LandingSection = () => {
               </p>
             </motion.div>
 
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="text-base md:text-lg text-slate-400 max-w-2xl leading-relaxed"
+              className="space-y-4"
             >
-              Medical Sciences student focused on conducting deep research on disease mechanisms, with growing interest in cancer research.
-            </motion.p>
+              <p className="text-base md:text-lg text-slate-400 max-w-2xl leading-relaxed">
+                Medical Sciences student focused on conducting deep research on disease mechanisms, with growing interest in cancer research.
+              </p>
+            </motion.div>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 mt-12 pt-12 border-t border-slate-800/50">
@@ -87,6 +89,19 @@ export const LandingSection = () => {
                 </motion.div>
               ))}
             </div>
+
+            {/* Scholarship Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+              className="mt-8 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-cyan-500/10 border border-cyan-500/30"
+            >
+              <span className="text-cyan-400 font-semibold">✓</span>
+              <p className="text-base md:text-lg text-cyan-400 font-semibold">
+                Recipient of Western's Scholarship of Excellence ($8000)
+              </p>
+            </motion.div>
           </div>
 
           {/* Right side - Image */}
